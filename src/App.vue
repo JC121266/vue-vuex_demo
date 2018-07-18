@@ -1,25 +1,36 @@
 <template>
-  <div id="app">
-    <img src="./assets/logo.png">
-    <router-view/>
-  </div>
+<div id="app">
+	<router-view></router-view>
+	<!-- <div class="">
+		this is again
+	</div> -->
+</div>
 </template>
 
 <script>
+import {
+	mapGetters
+} from 'vuex'
+
 export default {
-  name: 'App'
-}
+	name: "App",
+	components: {},
+	computed: {
+		// ...mapGetters(['isLoading'])
+	}
+};
 </script>
 
-<style>
-/* @import '~vux/src/styles/reset.less';
-@import '~vux/src/styles/1px.less'; */
-#app {
-    font-family: 'Avenir', Helvetica, Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-align: center;
-    color: #2c3e50;
-    margin-top: 60px;
+<style lang="less">
+body,
+html {
+    font-family: "PingFang SC", -apple-system, BlinkMacSystemFont, "Helvetica Neue", STHeiti, "Microsoft Yahei" sans-serif;
+    background-color: #f8f8f8;
+    height: 100%;
+    font-size: 15px;
+}
+
+* {
+    box-sizing: border-box;
 }
 </style>

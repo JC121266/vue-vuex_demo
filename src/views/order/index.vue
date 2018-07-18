@@ -1,6 +1,6 @@
 <template>
-<div class="login">
-	this is login
+<div class="order">
+	this is order
 </div>
 </template>
 

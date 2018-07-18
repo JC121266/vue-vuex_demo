@@ -1,6 +1,6 @@
 <template>
-<div class="login">
-	this is login
+<div class="mine">
+	this is mine
 </div>
 </template>
 
