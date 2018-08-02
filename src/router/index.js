@@ -6,7 +6,8 @@ export default new Router({
 		{
 			path: "/",
 			name: "login",
-			component: () => import("../views/login")
+			component: r =>
+				require.ensure([], () => r(require("../views/login")), "login")
 		},
 		{
 			path: "/home",
