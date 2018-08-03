@@ -1,5 +1,11 @@
 # vue-vuex_demo
 ``` bash
+# first
+git clone https://github.com/JC121266/vue-vuex_demo.git
+
+# second
+cd vue-vuex_demo
+
 # install dependencies
 npm install
 
@@ -9,10 +15,7 @@ npm run dev
 # build for production with minification
 npm run build
 
-# build for production and view the bundle analyzer report
-npm run build --report
+# sftp server
+npm run build:sftp
 ```
-
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
-=======
-vue, vuex, vue-router, vux, axios
+vue, vuex, vue-router, vux, axios, gulp, gulp-sftp

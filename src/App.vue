@@ -1,6 +1,10 @@
 <template>
 <div id="app">
-	<router-view></router-view>
+	<transition name="fade" mode="out-in">
+		<keep-alive>
+			<router-view v-if="!!$route.meta.keepAlive"></router-view>
+		</keep-alive>
+	</transition>
 </div>
 </template>
 
@@ -23,8 +27,9 @@ body,
 html {
     font-family: "PingFang SC", -apple-system, BlinkMacSystemFont, "Helvetica Neue", STHeiti, "Microsoft Yahei" sans-serif;
     background-color: #f8f8f8;
-    height: 100%;
-    font-size: 15px;
+    // height: 100vh;
+    font-size: 16px;
+    margin: 0;
 }
 
 * {
