@@ -11,11 +11,14 @@
 export default {
 	name: "order",
 	components: {},
-	computer: {},
+	computed: {},
 	data() {
 		return {}
 	},
-	mounted() {},
+	mounted() {
+		alert(123)
+		console.log(this.$route, '---------');
+	},
 	methods: {}
 }
 </script>

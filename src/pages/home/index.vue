@@ -12,12 +12,12 @@
 export default {
 	name: "home",
 	components: {},
-	computer: {},
+	computed: {},
 	data() {
 		return {}
 	},
 	mounted() {
-		console.log(this.$router);
+		console.log(this.$route);
 	},
 	methods: {}
 }

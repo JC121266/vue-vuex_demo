@@ -14,7 +14,7 @@ export default new Router({
 					() => r(require("../pages/login/phoneLogin")),
 					"phoneLogin"
 				),
-			meta: {keepAlive: true}
+			meta: {keepAlive: true, showTab: false}
 		},
 		// 密码登录
 		{
@@ -26,7 +26,7 @@ export default new Router({
 					() => r(require("../pages/login/pwdLogin")),
 					"pwdLogin"
 				),
-			meta: {keepAlive: true}
+			meta: {keepAlive: true, showTab: false}
 		},
 		// 忘记密码
 		{
@@ -38,7 +38,7 @@ export default new Router({
 					() => r(require("../pages/login/forgetPwd")),
 					"forgetPwd"
 				),
-			meta: {keepAlive: true}
+			meta: {keepAlive: true, showTab: false}
 		},
 		// 注册
 		{
@@ -50,7 +50,7 @@ export default new Router({
 					() => r(require("../pages/login/register")),
 					"register"
 				),
-			meta: {keepAlive: true}
+			meta: {keepAlive: true, showTab: false}
 		},
 		// =====================首页==============================
 		{
@@ -58,7 +58,7 @@ export default new Router({
 			name: "home",
 			component: r =>
 				require.ensure([], () => r(require("../pages/home")), "home"),
-			meta: {keepAlive: true}
+			meta: {keepAlive: true, showTab: true}
 		},
 		// =====================我的==============================
 		{
@@ -66,7 +66,7 @@ export default new Router({
 			name: "mine",
 			component: r =>
 				require.ensure([], () => r(require("../pages/mine")), "mine"),
-			meta: {keepAlive: false}
+			meta: {keepAlive: false, showTab: true}
 		},
 		// =====================订单==============================
 		{
@@ -74,9 +74,17 @@ export default new Router({
 			name: "order",
 			component: r =>
 				require.ensure([], () => r(require("../pages/order")), "order"),
-			meta: {keepAlive: false}
+			meta: {keepAlive: false, showTab: true}
 		}
 	],
+	beforeRouteLeave(to, from, next) {
+		if (to.path == "home") {
+			to.meta.keepAlive = true;
+		} else {
+			to.meta.keepAlive = true;
+		}
+		next();
+	},
 	//路由切换时页面如何滚动
 	scrollBehavior(to, from, savedPosition) {
 		return {x: 0, y: 0};

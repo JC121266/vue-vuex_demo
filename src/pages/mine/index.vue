@@ -1,9 +1,11 @@
 <style lang="less" scoped>
-.mine {}
+.mine {
+    height: 100vh;
+}
 </style>
 <template>
 <div class="mine">
-	this is mine
+	this is mine this is mine this is mine this is mine this is mine this is mine this is mine this is mine this is mine this is mine this is mine varthis is mine
 </div>
 </template>
 
@@ -11,11 +13,13 @@
 export default {
 	name: "mine",
 	components: {},
-	computer: {},
+	computed: {},
 	data() {
 		return {}
 	},
-	mounted() {},
+	mounted() {
+		console.log(this.$route);
+	},
 	methods: {}
 }
 </script>
