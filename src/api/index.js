@@ -1,24 +1,22 @@
-import Axios from "axios";
-import {baseURL} from "./url";
-const instance = Axios.create({
-	baseURL: baseURL,
-	timeout: 10000
-});
-//请求拦截器
-instance.interceptors.request.use();
-//响应拦截器
-instance.interceptors.response.use(({data, status, statusText}) => {
-	if (status === 200 || status === 304) {
-		return data;
-	}
-	return {
-		code: -404,
-		message: statusText,
-		data: statusText
-	};
-});
-export default {
-	install: vue => {
-		vue.prototype.$http = instance;
-	}
+import http from "@/utils/http";
+const mApi = "/api/manager";
+const cApi = "/api/container";
+
+// 删除操作统一将id放到api后,即api/id
+export const page = async params => http.post("/api/repo/page", params);
+
+export const list = async params => http.post("/api/repo/list", params);
+
+// 首页数据
+export const getHomeData = async params =>
+	http.post(`${mApi}/admin/index`, params);
+
+// 全局信息
+export const globalInfo = async params =>
+	http.post(`${mApi}/admin/indexTitle`, params);
+
+// 容器管理
+export const container = {
+	page: async params => http.post(`${mApi}/container/page`, params),
+	detail: async params => http.post(`${cApi}/k8sapi/container/read`, params)
 };

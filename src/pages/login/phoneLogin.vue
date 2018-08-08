@@ -37,7 +37,6 @@
 	</div>
 
 	<div class="phoneLogin-login__way">
-
 		<router-link :to="{ name: 'pwdLogin'}" class="">{{loginWay}}</router-link>
 	</div>
 </div>
